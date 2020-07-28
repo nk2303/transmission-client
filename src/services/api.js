@@ -24,8 +24,8 @@ const createPage = (key, content) => {
 //   }).then(resp => resp.json());
 // };
 
-const updatePage = data => {
-  return fetch(`${BACKEND_DOMAIN}/users/${data.user.id}`, {
+const updatePage = key => {
+  return fetch(`${BACKEND_DOMAIN}/k/${data.user.id}`, {
     method: "PUT",
     headers: headers(),
     body: JSON.stringify(data)
