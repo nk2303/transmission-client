@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from "react-bootstrap/Button";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -11,18 +12,17 @@ const Home = () => {
             "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
             "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
         ]
-        let r = '';
+        let url_key = '';
         for (let i = 0; i <= 3; i++) {
             let k = characters[Math.floor(Math.random()*characters.length)]
-            r = r + k;
+            url_key += k;
         }
-        return r;
+        
+        return url_key;
     }
 
     return (
-        <Button variant="dark">
-            Create a Page
-        </Button>
+        <Link to={`/${generateKey()}`} className="btn btn-dark">Create a Page</Link>
     )
 }
 
