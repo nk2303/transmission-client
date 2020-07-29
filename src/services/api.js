@@ -11,11 +11,11 @@ const headers = () => {
 
 const createPage = (key, content) => {
     const page = { page: { key, content } }
-  return fetch(`${BACKEND_DOMAIN}/pages`, {
-    method: "POST",
-    headers: headers(),
-    body: JSON.stringify(page)
-  }).then(resp => resp.json());
+    return fetch(`${BACKEND_DOMAIN}/pages`, {
+        method: "POST",
+        headers: headers(),
+        body: JSON.stringify(page)
+    }).then(resp => resp.json());
 };
 
 // const getPage = () => {
@@ -41,10 +41,8 @@ const deletePage = page_id => {
 
 
 export const api = {
-  page: {
     createPage,
     // getPage,
     updatePage,
     deletePage,
-  }
 };
