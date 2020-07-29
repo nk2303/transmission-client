@@ -24,11 +24,11 @@ const createPage = (key, content) => {
 //   }).then(resp => resp.json());
 // };
 
-const updatePage = key => {
-  return fetch(`${BACKEND_DOMAIN}/k/${data.user.id}`, {
+const updatePage = (key, content) => {
+  return fetch(`${BACKEND_DOMAIN}/k/${key}`, {
     method: "PUT",
     headers: headers(),
-    body: JSON.stringify(data)
+    body: JSON.stringify(content)
   }).then(resp => resp.json());
 };
 
